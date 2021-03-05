@@ -5,17 +5,41 @@
  */
 package cuentas;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Pawtowta
  */
 public class Form_VGeneral extends javax.swing.JFrame {
 
+     DefaultTableModel modeloZ ;
+    
     /**
      * Creates new form Form_VGeneral1
      */
     public Form_VGeneral() {
         initComponents();
+        
+        modeloZ = new DefaultTableModel(){
+        
+              
+
+        @Override
+        public boolean isCellEditable(int rowIndex,int columnIndex){return false;}  //modificado añadido override
+
+        };
+              
+        modeloZ.addColumn("NFactura");
+        modeloZ.addColumn("NombreCliente");
+        modeloZ.addColumn("Fecha");
+        modeloZ.addColumn("Ruc");
+        modeloZ.addColumn("Total");
+        
+        
+        this.JTable2.setModel(modeloZ);
+        
+        
     }
 
     /**
@@ -28,7 +52,7 @@ public class Form_VGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        JTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -38,7 +62,7 @@ public class Form_VGeneral extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        JTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -49,7 +73,7 @@ public class Form_VGeneral extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(JTable2);
 
         jButton1.setText("Inicio");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -165,10 +189,10 @@ public class Form_VGeneral extends javax.swing.JFrame {
     private javax.swing.JButton BTN_Atras;
     private javax.swing.JButton Btn_Añadir;
     private javax.swing.JButton Btn_Eliminar;
+    private javax.swing.JTable JTable2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

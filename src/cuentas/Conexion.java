@@ -26,7 +26,7 @@ public class Conexion {
         Connection con = null;
         try{
             Class.forName("org.h2.Driver");
-            con = DriverManager.getConnection("jdbc:h2:C:\\Users\\Pawtowta\\Desktop\\DataBase\\Facturas","Angel","");
+            con = DriverManager.getConnection("jdbc:h2:C:\\Users\\User\\Desktop\\DataBase\\Facturas","Angel","");
             System.out.println("En linea");
         }catch(Exception ex){
             System.out.println("Error1 "+ex);
